@@ -2,9 +2,9 @@
 <h1 id="h">Almost done</h1><div id="out"></div>
 <script>
 var p=new URLSearchParams(location.search),o=document.getElementById('out');
-if(p.get('code')){o.innerHTML='<p>TikTok approved the connection. Copy the code below and paste it back to Claude in your chat. It expires in a few minutes.</p><p><code id="c"></code></p><button id="b">Copy code</button>';
+if(p.get('code')){o.innerHTML='<p>The connection was approved. Copy the code below and paste it back to Claude in your chat. It expires in a few minutes.</p><p><code id="c"></code></p><button id="b">Copy code</button>';
 document.getElementById('c').textContent=p.get('code');
 document.getElementById('b').onclick=function(){navigator.clipboard.writeText(p.get('code'));this.textContent='Copied';};}
-else if(p.get('error')){document.getElementById('h').textContent='Not connected';o.textContent='TikTok said: '+(p.get('error_description')||p.get('error'));}
-else{o.textContent='This page finishes the TikTok connection. Nothing to do here yet.';}
+else if(p.get('error')){document.getElementById('h').textContent='Not connected';o.textContent='The app said: '+(p.get('error_description')||p.get('error'));}
+else{o.textContent='This page finishes connecting your account (TikTok or YouTube). Nothing to do here yet.';}
 </script></body></html>
